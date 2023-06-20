@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    Day-1-javaScript-Interview-QandA
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>DAY 2 of JS Q/A</h1>
+    <!-- question 1 -->
+    <div class="container">
+        <div class="question">
+            Que.1 What is execution context?
+        </div>
+
+        <div class="ans">
+            <div class="explaination">
+                An environment called the Execution Context that handles the entire memory creation and execution of the
+                code.
+                During the context runtime, the parser parses the source code and allocates memory for the variables and
+                functions.
+                The source code is generated and gets executed.
+            </div>
+           <div class="img"></div>
+        </div>
+    </div>
+    <!-- question 2 -->
+    <div class="container">
+        <div class="question">
+            Que.2 What is an event loop and call stack
+        </div>
+        <div class="ans">
+         <div class="explaination">
+           <h3> event loop</h3>
+           event loop is stop the callback in the callback queue and micro task queue to going into the call stack
+           if any think is present in the call stack.
+           <h3> call stack</h3>
+            call stack is stack which follows lifo (last in first out) here callbacks and execution context are being push 
+           .that top most Execution is show where interpretator is is working on and coding being executed
+         </div>
+            <pre>
+ <b>var,let and const on redeclared and reinitailize</b>
+ console.log(x)//value of x is undefined (hoisting)
+var x=4;
+console.log(x);//value of x is 4
+var x=5; //redeclared
+console.log(x);//value of x is 5
+x=8;//reassign
+console.log(x); //value of x is 8
+
+console.log(y)//Cannot access 'y' before initialization
+let y=2;
+console.log(y)// value of y is 2
+y=3;// value of y is 3
+let y=5; //cannot redeclared
+
+console.log(z)// Cannot access 'z' before initialization
+ const z=7;
+console.log(z)//value of z is 7 
+const z=6;//cannot redeclared
+z=44;////cannot reassign
+
+
+<b>var are function scope and let , const are block scope</b>
+if(true){
+    var x=34;
+    let y=3;
+    const z=43;
+    console.log(x); //value of x =34
+    console.log(y); //value of y =3
+    console.log(z);//value of z =43
+}
+ console.log(x); //value of x =34
+ console.log(y); //y is not defined
+ console.log(z);//z is not defined
+
+        </pre>
+        </div>
+
+    </div>
+    <!-- question 3 -->
+    <div class="container">
+        <div class="question">
+            Ques.3 What is creation phase and execution phase?
+        </div>
+
+        <div class="ans">
+            <div class="explaination">
+                <h3>creation phase</h3>
+              In creation phase memory is being alocated to that scope variable and functions 
+              variable with var and simple functions are being inisialized by undefined and let and const 
+              variables are with uninisialized
+              <h3>execution phase</h3>
+              in execution phase code is being executed line by line and when there is any inisialition of variable happen
+              than it update the memory in creation phase.
+            </div>
+        </div>
+    </div>
+    <!-- question 4 -->
+    <div class="container">
+        <div class="question">
+            Ques.4 What is the spread operator?
+        </div>
+
+        <div class="ans">
+            <div class="explaination">
+ The spread operator ... is used to expand or spread an iterable or an object
+ . this do deep copy means here array value are by by values into B 
+            </div>
+            <pre>
+    let a=[5,35,2,6];
+    let b=[...a];//value of b is [5,35,2,6]
+ </pre>
+        </div>
+    </div>
+    <!-- question 5 -->
+    <div class="container">
+        <div class="question">
+            Ques.5 What is the use of setTimeout?
+        </div>
+
+        <div class="ans">
+            <div class="explaination">
+            setTimeout is an asynchonous in nature. it takes 2 parameters 1 is the callback and another is the time in milli second 
+            it execute/call the callback function after that that time only once if we want to stop in between then we can use clearTimeout()
+            </div>
+            <pre>
+     var setTime=  setTimeout( ()=>{
+         console.log('this is first class funtion');
+        },1000);
+        clearTimeout(setTime);
+    </pre>
+        </div>
+    </div>
+    <!-- question 6 -->
+    <div class="container">
+        <div class="question">
+            Ques.6 What are callback Hell?
+        </div>
+        <div class="ans">
+            <div class="explaination">
+                Here, every setTimeout() is callback (except the first stetimeout)
+                inner setTimeout call after the execution of previous setTimeout
+                due to this we can aachive 1 should be printed after 1 sec, 2 should be
+                printed after 2 sec, 3 should be printed after 3 sec, and so on.
+            </div>
+            <pre>
+function ques2(){
+  setTimeout(() => {
+     console.log("1");
+     setTimeout(()=>{
+         console.log("2");
+         setTimeout(()=>{
+             console.log("3");
+             setTimeout(()=>{
+                 console.log("4");
+                 setTimeout(()=>{
+                     console.log("5");
+                     setTimeout(()=>{
+                       console.log("6");
+                         setTimeout(()=>{
+                             console.log("7");
+                         },1000);
+                     },1000);
+                 },1000);
+             },1000);
+         },1000);
+     },1000);
+  }, 1000);
+ }
+</pre>
+
+        </div>
+    </div>
+    <!-- question 7 -->
+    <div class="container">
+        <div class="question">
+            Ques.7 What are callbacks?
+        </div>
+
+        <div class="ans">
+            <div class="explaination">
+                when a function is pass as an argument in another function then that function is callback function 
+                we can see in the function operation the third parameter is a callback function. We are first passing the
+                "callback" as an argument and then calling it inside the parent function
+                i.e., operation. Here, we have taken the "sum" as the callback function, we can create any function and pass
+                it as the callback in the operation function.
+            </div>
+
+            <pre>
+function sum(a, b) {
+  console.log(a + b)
+}
+
+function operation(val1, val2, callback) {
+  callback(val1, val2)
+}
+
+operation(6, 5, sum)
+</pre>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+body{
+    background:  rgb(82, 82, 213);
+    font-size: 28px;
+}
+h1{
+    width: fit-content;
+    color: red;
+    margin: auto;
+    border-bottom:2px solid rgb(255, 0, 0);
+}
+.ans{
+    color: white;
+}
+h3{
+    color: red;
+}
+
+.img{
+ background: url("./img/KbyKjjO_y.png");
+ max-height: 100px;
+ max-width: 300px;
+ background-position: center;
+ background-size: cover;
+}

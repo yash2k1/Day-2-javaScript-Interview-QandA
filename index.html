@@ -39,45 +39,9 @@
            if any think is present in the call stack.
            <h3> call stack</h3>
             call stack is stack which follows lifo (last in first out) here callbacks and execution context are being push 
-           .that top most Execution is show where interpretator is is working on and coding being executed
+           .that top most Execution is show where interpretator is is working on and code is being executed
          </div>
-            <pre>
- <b>var,let and const on redeclared and reinitailize</b>
- console.log(x)//value of x is undefined (hoisting)
-var x=4;
-console.log(x);//value of x is 4
-var x=5; //redeclared
-console.log(x);//value of x is 5
-x=8;//reassign
-console.log(x); //value of x is 8
-
-console.log(y)//Cannot access 'y' before initialization
-let y=2;
-console.log(y)// value of y is 2
-y=3;// value of y is 3
-let y=5; //cannot redeclared
-
-console.log(z)// Cannot access 'z' before initialization
- const z=7;
-console.log(z)//value of z is 7 
-const z=6;//cannot redeclared
-z=44;////cannot reassign
-
-
-<b>var are function scope and let , const are block scope</b>
-if(true){
-    var x=34;
-    let y=3;
-    const z=43;
-    console.log(x); //value of x =34
-    console.log(y); //value of y =3
-    console.log(z);//value of z =43
-}
- console.log(x); //value of x =34
- console.log(y); //y is not defined
- console.log(z);//z is not defined
-
-        </pre>
+      
         </div>
 
     </div>
